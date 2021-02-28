@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import axios from "axios";
-import environment from '../environment/environment'
+import environment from "../environment/environment";
 import CollapsibleTable from "../utils/CollapsibleTable/Table";
 import { makeStyles } from "@material-ui/core";
+import reducer from "../reducers/CommonReducer";
+import SearchBar from "./SearchBar";
 
 const useCharacterListStyles = makeStyles({
   content: {
-    margin: 25
-  }
-})
+    margin: 25,
+    display: "flex",
+    flexDirection: "column",
+  },
+});
 
 const createCharacter = (row) => {
   return {
@@ -20,22 +24,36 @@ const createCharacter = (row) => {
     origin: row.origin.name,
     location: row.location.name,
     image: row.image,
-    created: new Date(row.created).toDateString()
-  }
-}
+    created: new Date(row.created).toDateString(),
+  };
+};
 
-const columns = ['name', 'status', 'species', 'gender', 'origin', 'location', 'created'];
+const columns = [
+  "name",
+  "status",
+  "species",
+  "gender",
+  "origin",
+  "location",
+  "created",
+];
 
 const CharacterList = () => {
   const classes = useCharacterListStyles();
 
-  const [characterList, setCharacterList] = useState([]);
+  const [rows, setRows] = useState([]);
+
+  const [characterList, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
     axios
       .get(`${environment.baseUrl}/character`)
       .then((response) => {
-        setCharacterList(response.data.results);
+        let data = response.data.results.map((character) =>
+          createCharacter(character)
+        );
+        setRows(data);
+        dispatch({ type: "append", payload: data });
       })
       .catch((err) => {
         console.log(err);
@@ -44,7 +62,11 @@ const CharacterList = () => {
 
   return (
     <div className={classes.content}>
-      <CollapsibleTable columns={columns} rows={characterList.map((character) => createCharacter(character))}></CollapsibleTable>
+      <SearchBar columns={columns} dispatch={dispatch} rows={rows} />
+      <CollapsibleTable
+        columns={columns}
+        rows={characterList}
+      ></CollapsibleTable>
     </div>
   );
 };
