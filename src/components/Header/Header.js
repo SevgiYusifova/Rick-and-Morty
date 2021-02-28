@@ -18,11 +18,11 @@ const Header = () => {
         <Button component={Link} to="/character">
           Characters
         </Button>
-        <Button component={Link} to="/character">
-          Characters
+        <Button component={Link} to="/location">
+          Locations
         </Button>
-        <Button component={Link} to="/character">
-          Characters
+        <Button component={Link} to="/episode">
+          Episodes
         </Button>
       </ButtonGroup>
       <img className="img-rick" src={rick} alt="Rick" />

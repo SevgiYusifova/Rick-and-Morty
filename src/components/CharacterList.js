@@ -18,8 +18,8 @@ const CharacterList = () => {
 
   return (
     <ul>
-      {characterList.map((chars, id) => (
-        <li key={id}>{chars.name}</li>
+        {characterList.map((character, id) => (
+        <li key={id}>{character.name}</li>
       ))}
     </ul>
   );
