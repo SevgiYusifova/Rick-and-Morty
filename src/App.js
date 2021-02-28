@@ -3,7 +3,7 @@ import theme from "./theming/default.theme.js";
 
 import Header from "./components/Header/Header";
 import NoMatch from "./components/NoMatch";
-import CharacterList from "./components/CharacterList";
+import CharacterList from "./components/CharacterList/CharacterList";
 import LocationList from "./components/LocationList";
 import EpisodeList from "./components/EpisodeList";
 
