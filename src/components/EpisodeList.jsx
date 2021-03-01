@@ -17,9 +17,9 @@ const useEpisodeListStyles = makeStyles({
 const createEpisode = (row) => {
   return {
     name: row.name,
-    air_date: row.air_date,
+    air_date: new Date(row.air_date).toJSON().slice(0, 10),
     episode: row.episode,
-    created: new Date(row.created).toDateString(),
+    created: new Date(row.created).toJSON().slice(0, 10)
   };
 };
 
