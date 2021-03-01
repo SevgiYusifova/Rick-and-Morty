@@ -24,7 +24,7 @@ const createCharacter = (row) => {
     origin: row.origin.name,
     location: row.location.name,
     image: row.image,
-    created: new Date(row.created).toDateString(),
+    created: new Date(row.created).toJSON().slice(0, 10)
   };
 };
 

@@ -19,7 +19,7 @@ const createLocation = (row) => {
     name: row.name,
     type: row.type,
     dimension: row.dimension,
-    created: new Date(row.created).toDateString(),
+    created: new Date(row.created).toJSON().slice(0, 10)
   };
 };
 
