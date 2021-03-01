@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/Rick-and-Morty/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/Rick-and-Morty/static/js/main.84b40561.chunk.js",
-    "main.js.map": "/Rick-and-Morty/static/js/main.84b40561.chunk.js.map",
-    "runtime-main.js": "/Rick-and-Morty/static/js/runtime-main.c024a1ea.js",
-    "runtime-main.js.map": "/Rick-and-Morty/static/js/runtime-main.c024a1ea.js.map",
-    "static/js/2.c6c5c4be.chunk.js": "/Rick-and-Morty/static/js/2.c6c5c4be.chunk.js",
-    "static/js/2.c6c5c4be.chunk.js.map": "/Rick-and-Morty/static/js/2.c6c5c4be.chunk.js.map",
-    "static/js/3.98918d58.chunk.js": "/Rick-and-Morty/static/js/3.98918d58.chunk.js",
-    "static/js/3.98918d58.chunk.js.map": "/Rick-and-Morty/static/js/3.98918d58.chunk.js.map",
+    "main.js": "/Rick-and-Morty/static/js/main.545bd4e9.chunk.js",
+    "main.js.map": "/Rick-and-Morty/static/js/main.545bd4e9.chunk.js.map",
+    "runtime-main.js": "/Rick-and-Morty/static/js/runtime-main.188b428d.js",
+    "runtime-main.js.map": "/Rick-and-Morty/static/js/runtime-main.188b428d.js.map",
+    "static/js/2.af0af62b.chunk.js": "/Rick-and-Morty/static/js/2.af0af62b.chunk.js",
+    "static/js/2.af0af62b.chunk.js.map": "/Rick-and-Morty/static/js/2.af0af62b.chunk.js.map",
+    "static/js/3.5d270d07.chunk.js": "/Rick-and-Morty/static/js/3.5d270d07.chunk.js",
+    "static/js/3.5d270d07.chunk.js.map": "/Rick-and-Morty/static/js/3.5d270d07.chunk.js.map",
     "index.html": "/Rick-and-Morty/index.html",
     "static/css/main.ea1455b2.chunk.css.map": "/Rick-and-Morty/static/css/main.ea1455b2.chunk.css.map",
-    "static/js/2.c6c5c4be.chunk.js.LICENSE.txt": "/Rick-and-Morty/static/js/2.c6c5c4be.chunk.js.LICENSE.txt",
+    "static/js/2.af0af62b.chunk.js.LICENSE.txt": "/Rick-and-Morty/static/js/2.af0af62b.chunk.js.LICENSE.txt",
     "static/media/morty.fc6030c8.png": "/Rick-and-Morty/static/media/morty.fc6030c8.png",
     "static/media/rick.ddf093bf.png": "/Rick-and-Morty/static/media/rick.ddf093bf.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c024a1ea.js",
-    "static/js/2.c6c5c4be.chunk.js",
+    "static/js/runtime-main.188b428d.js",
+    "static/js/2.af0af62b.chunk.js",
     "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.84b40561.chunk.js"
+    "static/js/main.545bd4e9.chunk.js"
   ]
 }
