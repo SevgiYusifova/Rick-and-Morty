@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## LIVE DEMO
 
-https://sevgiyusifova.github.io/Rick-and-Morty
+https://rickmortylist.netlify.app
 
 ## Available Scripts
 
