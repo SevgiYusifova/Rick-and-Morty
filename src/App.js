@@ -22,12 +22,12 @@ function App() {
         <div className="container">
           <Header />
           <Switch>
-            <Route exact path="/Rick-and-Morty">
+            <Route exact path="/">
               <Redirect to="/character" />
             </Route>
-            <Route path="/character" component={CharacterList} />
-            <Route path="/location" component={LocationList} />
-            <Route path="/episode" component={EpisodeList} />
+            <Route exact path="/character" component={CharacterList} />
+            <Route exact path="/location" component={LocationList} />
+            <Route exact path="/episode" component={EpisodeList} />
             <Route component={NoMatch} />
           </Switch>
         </div>
