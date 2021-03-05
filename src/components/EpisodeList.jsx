@@ -104,7 +104,7 @@ const EpisodeList = () => {
         rows={episodeList}
       ></CollapsibleTable>
       <Typography variant="caption" className={classes.counter}>
-        Characters in list: {episodeList.length}
+        Episodes in list: {episodeList.length}
       </Typography>
     </div>
   );
