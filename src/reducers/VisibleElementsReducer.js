@@ -5,9 +5,7 @@ const reducer = (state, action) => {
         case 'clear':
             return [];
         case 'filter':
-            return action.rows.filter(item => {
-                return item[action.propertyName].toUpperCase().includes(action.payload.toUpperCase())
-            });
+            return action.rows.filter(item => item[action.propertyName].toUpperCase().includes(action.payload.toUpperCase()));
         default:
             throw new Error('Wrong action type!');
     }

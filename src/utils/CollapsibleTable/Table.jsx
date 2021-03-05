@@ -8,11 +8,10 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Row from "./Row";
 
-const CollapsibleTable = (props) => {
-  const { columns, rows } = props;
+const CollapsibleTable = ({columns, rows, tableRef}) => {
 
   return (
-    <TableContainer component={Paper} style={{ maxHeight: "60vh" }}>
+    <TableContainer component={Paper} style={{maxHeight: '60vh'}} ref={tableRef}>
       <Table aria-label="collapsible table" stickyHeader>
         <TableHead>
           <TableRow>
