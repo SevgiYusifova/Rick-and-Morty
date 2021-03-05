@@ -1,5 +1,5 @@
 import { Button, IconButton, makeStyles } from "@material-ui/core";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 import { TextField, FormControl, Select, MenuItem } from "@material-ui/core";
 import { DeleteOutline } from "@material-ui/icons";
@@ -51,8 +51,14 @@ const SearchBar = ({ columns, dispatch, rows }) => {
   };
 
   useEffect(() => {
-    dispatch({type:"filter", propertyName: searchColumn, payload: searchText, rows: rows});
-}, [rows])
+    dispatch({
+      type: "filter",
+      propertyName: searchColumn,
+      payload: searchText,
+      rows: rows,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rows]);
 
   return (
     <div className={classes.container}>

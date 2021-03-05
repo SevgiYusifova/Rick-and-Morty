@@ -1,11 +1,10 @@
 import React, { useEffect, useReducer } from "react";
-import axios from "axios";
-import environment from "../environment/environment";
 import CollapsibleTable from "../utils/CollapsibleTable/Table";
 import { makeStyles, Typography } from "@material-ui/core";
 import VisibleElementsReducer from "../reducers/VisibleElementsReducer";
 import DataReducer from "../reducers/DataReducer";
 import SearchBar from "./SearchBar";
+import { loadData } from "../api/api";
 
 const useEpisodeListStyles = makeStyles({
   content: {
@@ -29,28 +28,11 @@ const createEpisode = (row) => {
 
 const columns = ["name", "air_date", "episode", "created"];
 
+const TYPE = "episode";
+
 const nextPage = {
   url: "",
   isLast: false,
-};
-
-const loadData = async (nextPageUrl = "") => {
-  const url = nextPageUrl ? nextPageUrl : `${environment.baseUrl}/episode`;
-
-  try {
-    if (nextPage.isLast) throw new Error("Last page");
-    const response = await axios.get(url);
-
-    if (response.status === 200) {
-      return {
-        data: response.data.results.map((episode) => createEpisode(episode)),
-        nextPage: response.data.info.next,
-      };
-    }
-  } catch (error) {
-    console.log(error);
-    return { data: [], nextPage: "" };
-  }
 };
 
 const EpisodeList = () => {
@@ -68,7 +50,8 @@ const EpisodeList = () => {
 
   const handleScrollToEnd = async (event) => {
     if (isScrolledToBottom(event)) {
-      const response = await loadData(nextPage.url);
+      if (nextPage.isLast) return;
+      const response = await loadData(createEpisode, nextPage.url, TYPE);
 
       nextPage.url = response.nextPage;
       if (!nextPage.url) nextPage.isLast = true;
@@ -81,7 +64,7 @@ const EpisodeList = () => {
     const init = async () => {
       tableRef.current.onscroll = handleScrollToEnd;
 
-      const response = await loadData();
+      const response = await loadData(createEpisode, "", TYPE);
 
       nextPage.url = response.nextPage;
       dataDispatch({ type: "append", payload: response.data });
@@ -93,6 +76,7 @@ const EpisodeList = () => {
     return () => {
       nextPage.isLast = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

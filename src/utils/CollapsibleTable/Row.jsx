@@ -7,7 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import Details from '../../components/Details';
+import Details from "../../components/Details";
 
 const useRowStyles = makeStyles({
   root: {
@@ -44,7 +44,7 @@ const Row = (props) => {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-            <Details data={row}/>
+              <Details data={row} />
             </Box>
           </Collapse>
         </TableCell>
